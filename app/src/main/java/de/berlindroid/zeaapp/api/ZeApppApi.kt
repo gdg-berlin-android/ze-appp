@@ -1,6 +1,7 @@
 package de.berlindroid.zeaapp.api
 
 import retrofit2.http.Field
+import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
 
@@ -24,6 +25,11 @@ interface ZeApppApi {
      */
     @POST("use/mariobodemann/conferences/android/latest")
     fun latestAndroidConference(@Field("wrapAPIKey") key: String): Conference
+
+
+
+    @GET("https://pokeapi.co/api/v2/pokemon/?limit=999")
+    fun getPokemon(): GetPokemon
 
 }
 

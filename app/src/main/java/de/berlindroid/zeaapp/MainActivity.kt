@@ -2,6 +2,7 @@ package de.berlindroid.zeaapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 import de.berlindroid.zeaapp.api.ZeApppApi
@@ -14,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         setupListener()
-//        App.retrofit.create(ZeApppApi.javaClass).
+
     }
 
     private fun setupListener() {

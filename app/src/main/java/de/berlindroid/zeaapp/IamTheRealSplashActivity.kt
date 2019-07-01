@@ -9,11 +9,12 @@ import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.github.paolorotolo.appintro.AppIntro
 import android.graphics.Color.parseColor
+import android.util.Log
 import androidx.annotation.Nullable
 import androidx.fragment.app.Fragment
 import com.github.paolorotolo.appintro.AppIntroFragment
 import com.github.paolorotolo.appintro.model.SliderPage
-
+import de.berlindroid.zeaapp.api.ZeApppApi
 
 
 class IamTheRealSplashActivity : AppIntro() {
@@ -58,6 +59,13 @@ class IamTheRealSplashActivity : AppIntro() {
 
         isVibrateOn = true
         vibrateDuration = 500
+
+
+
+//        val api = App.retrofit.create(ZeApppApi::class.java)
+//        val pokemon =api.getPokemon()
+//
+//        Log.d("pokemon --->",pokemon.results.toString())
     }
 
     override fun onSkipPressed(currentFragment: Fragment?) {
