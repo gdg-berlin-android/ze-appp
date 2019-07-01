@@ -3,6 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="de.berlindroid.zeaapp">
 
+    <!--
+        HEY DUDE, YOU ARRIVED HERE :D
+        I have no idea what I'm doing, just don't touch the manifest as is idk
+    -->
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,13 +17,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".SplashActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        <activity android:name=".IamTheRealSplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SplashActivity"/>
         <activity android:name=".MainActivity">
         </activity>
     </application>
