@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import de.berlindroid.zeaapp.R
+import kotlinx.android.synthetic.main.item_pokemon.view.*
 
 class Pokedapter : RecyclerView.Adapter<Pokeholder>() {
 
@@ -29,18 +30,10 @@ class Pokedapter : RecyclerView.Adapter<Pokeholder>() {
 
 data class Pokemon(
     val name: String
-
-) {
-    companion object {
-        @JvmStatic
-        fun mock(): Pokemon {
-            return Pokemon("Pikachu")
-        }
-    }
-}
+)
 
 class Pokeholder(val view: View) : RecyclerView.ViewHolder(view) {
     fun bind(pokemon: Pokemon) {
-
+        itemView.pokeName.text = pokemon.name
     }
 }

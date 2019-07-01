@@ -30,18 +30,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         pokemonButton.setOnClickListener {
             val api = App.pokeRetrofit.create(ZeApppApi::class.java)
-            api.getPokemon().enqueue(object : Callback<GetPokemon> {
-                override fun onFailure(call: Call<GetPokemon>, t: Throwable) {
-                    t.printStackTrace()
-                    Toast.makeText(this@MainActivity, "pokemon ---> ${t.toString()}", Toast.LENGTH_LONG).show()
-                }
-
-                override fun onResponse(call: Call<GetPokemon>, response: Response<GetPokemon>) {
-                    runOnUiThread {
-                        main_text.text = response.body()?.results?.joinToString {  it.name }
-                    }
-                }
-            })
+            startActivity(Intent(this, PokemonActivity::class.java))
         }
 
         conferenceButton.setOnClickListener {
