@@ -4,7 +4,6 @@ import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.GET
 import retrofit2.http.POST
-import retrofit2.http.Path
 
 interface ZeApppApi {
 
@@ -26,7 +25,6 @@ interface ZeApppApi {
      */
     @POST("use/mariobodemann/conferences/android/latest")
     fun latestAndroidConference(@Field("wrapAPIKey") key: String): Conference
-
 
 
     @GET("api/v2/pokemon/?limit=999")

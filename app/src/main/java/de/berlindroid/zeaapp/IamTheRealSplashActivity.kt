@@ -1,21 +1,15 @@
 package de.berlindroid.zeaapp
 
-import android.app.Activity
 import android.content.Intent
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
-import com.bumptech.glide.Glide
-import com.github.paolorotolo.appintro.AppIntro
-import android.graphics.Color.parseColor
 import android.util.Log
 import androidx.annotation.Nullable
 import androidx.fragment.app.Fragment
+import com.github.paolorotolo.appintro.AppIntro
 import com.github.paolorotolo.appintro.AppIntroFragment
 import com.github.paolorotolo.appintro.model.SliderPage
 import de.berlindroid.zeaapp.api.GetPokemon
-import de.berlindroid.zeaapp.api.PokeList
 import de.berlindroid.zeaapp.api.ZeApppApi
 import retrofit2.Call
 import retrofit2.Callback
@@ -37,8 +31,7 @@ class IamTheRealSplashActivity : AppIntro() {
         sliderPage.imageDrawable = R.drawable.jw
         addSlide(AppIntroFragment.newInstance(sliderPage))
 
-        repeat(9){i ->
-            // ;)
+        repeat(9) { i ->
             sliderPage = SliderPage()
             sliderPage.title = "And there is my favorite Deutsch artist :joy:"
             sliderPage.description = "< HOW MUCH IS THE FISHHHHH ${"?!".repeat(i)} >"
@@ -66,8 +59,7 @@ class IamTheRealSplashActivity : AppIntro() {
         vibrateDuration = 500
 
 
-
-       val api = App.pokeRetrofit.create(ZeApppApi::class.java)
+        val api = App.pokeRetrofit.create(ZeApppApi::class.java)
         api.getPokemon().enqueue(object : Callback<GetPokemon> {
             override fun onFailure(call: Call<GetPokemon>, t: Throwable) {
                 t.printStackTrace()
@@ -75,7 +67,7 @@ class IamTheRealSplashActivity : AppIntro() {
             }
 
             override fun onResponse(call: Call<GetPokemon>, response: Response<GetPokemon>) {
-                Log.d("pokemon --->",response.body()?.results.toString())
+                Log.d("pokemon --->", response.body()?.results.toString())
             }
         })
 
