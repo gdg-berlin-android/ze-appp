@@ -32,16 +32,18 @@ class IamTheRealSplashActivity : AppIntro() {
         sliderPage.imageDrawable = R.drawable.jw
         addSlide(AppIntroFragment.newInstance(sliderPage))
 
-        sliderPage = SliderPage()
-        sliderPage.title = "And this is the awesom slide number 2"
-        sliderPage.description = "< ADD AWESOME MOVIE QUOTE HERE >"
-        sliderPage.imageDrawable = R.drawable.jw
-        addSlide(AppIntroFragment.newInstance(sliderPage))
+        repeat(9){i ->
+            // ;)
+            sliderPage = SliderPage()
+            sliderPage.title = "And there is my favorite Deutsch artist :joy:"
+            sliderPage.description = "< HOW MUCH IS THE FISHHHHH ${"?!".repeat(i)} >"
+            sliderPage.imageDrawable = R.drawable.scooter
+            addSlide(AppIntroFragment.newInstance(sliderPage))
+        }
 
         sliderPage = SliderPage()
-        sliderPage.title = "And this is the awesom slide number 3"
-        sliderPage.description = "< ADD AWESOME MOVIE QUOTE HERE >"
-        sliderPage.imageDrawable = R.drawable.jw
+        sliderPage.title = "TROLL SOME MORE"
+        sliderPage.description = "< HERE >"
         addSlide(AppIntroFragment.newInstance(sliderPage))
 
         // OPTIONAL METHODS
@@ -55,11 +57,11 @@ class IamTheRealSplashActivity : AppIntro() {
 
     override fun onSkipPressed(currentFragment: Fragment?) {
         super.onSkipPressed(currentFragment)
-        startActivity(Intent(this, SplashActivity::class.java))
+        startActivity(Intent(this, MainActivity::class.java))
     }
 
     override fun onDonePressed(currentFragment: Fragment?) {
         super.onDonePressed(currentFragment)
-        startActivity(Intent(this, SplashActivity::class.java))
+        startActivity(Intent(this, MainActivity::class.java))
     }
 }
