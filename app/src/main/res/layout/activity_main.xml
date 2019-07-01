@@ -31,6 +31,15 @@
         android:background="#00dd00"
         />
 
+    <Button
+        style="@style/TextAppearance.MaterialComponents.Button"
+        app:layout_constraintBottom_toTopOf="@id/main_play_button"
+        android:text="@string/let_s_do_whatever"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/italianButton" />
+
 
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

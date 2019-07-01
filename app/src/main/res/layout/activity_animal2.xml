@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,29 +8,33 @@
     tools:context=".AnimalActivity">
 
     <Button
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/animalButton"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:text="Pick your animal"
-        ></Button>
+        android:text="Pick your animal" />
 
 
     <TextView
         android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/animalButton"
         android:text="Your are:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></TextView>
+        app:layout_constraintStart_toStartOf="@+id/animalButton"
+        app:layout_constraintTop_toBottomOf="@id/animalButton" />
 
 
     <ImageView
-
+        android:src="@drawable/ic_appintro_done"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv"
         android:id="@+id/animalPicture"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_below="@id/tv">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv" />
 
-    </ImageView>
-"
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

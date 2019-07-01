@@ -1,5 +1,6 @@
 package de.berlindroid.zeaapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -15,6 +16,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         initOnClickListeners()
         initRest()
 
+        italianButton.setOnClickListener {
+            val intent = Intent(this, AnimalActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun initOnClickListeners() {

@@ -41,7 +41,7 @@ public class AnimalActivity extends Activity {
     }
 
 
-
+    //WHY???
     private class DownLoadImage extends AsyncTask<String,Void, Bitmap>
     {
         private ImageView image;
