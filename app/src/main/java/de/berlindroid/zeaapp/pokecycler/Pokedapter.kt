@@ -29,7 +29,15 @@ class Pokedapter : RecyclerView.Adapter<Pokeholder>() {
 
 data class Pokemon(
     val name: String
-)
+
+) {
+    companion object {
+        @JvmStatic
+        fun mock(): Pokemon {
+            return Pokemon("Pikachu")
+        }
+    }
+}
 
 class Pokeholder(val view: View) : RecyclerView.ViewHolder(view) {
     fun bind(pokemon: Pokemon) {
