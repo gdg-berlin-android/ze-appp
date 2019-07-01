@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import de.berlindroid.zeaapp.api.GetPokemon
+import de.berlindroid.zeaapp.api.PokeApi
 import de.berlindroid.zeaapp.api.ZeApppApi
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
@@ -43,7 +44,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         conferenceButton.setOnClickListener {
-            val api = App.conferenceApi.create(ZeApppApi::class.java)
+            val api = App.pokeRetrofit.create(PokeApi::class.java)
             api.getPokemon().enqueue(object : Callback<GetPokemon> {
                 override fun onFailure(call: Call<GetPokemon>, t: Throwable) {
                     t.printStackTrace()
