@@ -1,45 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.motion.widget.MotionLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     app:layoutDescription="@xml/scene_01">
+
+    <TextView
+        android:id="@+id/main_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <ImageView
         android:id="@+id/jwimage"
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:src="@drawable/jw"
-        >
-    </ImageView>
+        android:src="@drawable/jw"></ImageView>
 
     <Button
         android:id="@+id/main_play_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#00dd00"
         android:text="@string/main_play_label"
         android:textColor="#ffffff"
-        android:background="#00dd00"
-        />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
+        android:id="@+id/italianButton"
         style="@style/TextAppearance.MaterialComponents.Button"
-        app:layout_constraintBottom_toTopOf="@id/main_play_button"
-        android:text="@string/let_s_do_whatever"
-        android:layout_margin="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/italianButton" />
+        android:layout_margin="8dp"
+        android:text="@string/let_s_do_whatever"
+        app:layout_constraintBottom_toTopOf="@id/main_play_button" />
 
+
+    <Button
+        android:id="@+id/pokemonButton"
+        style="@style/TextAppearance.MaterialComponents.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="#FFFF8080"
+        android:text="Pokemonify"
+        app:layout_constraintBottom_toTopOf="@id/italianButton" />
+
+    <Button
+        android:id="@+id/conferenceButton"
+        style="@style/TextAppearance.MaterialComponents.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="#FFFFFF80"
+        android:text="Conferencify"
+        app:layout_constraintBottom_toTopOf="@id/pokemonButton" />
 
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

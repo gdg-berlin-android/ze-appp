@@ -7,7 +7,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 class App : Application() {
 
     companion object {
-        val retrofit  = Retrofit.Builder()
+        val conferenceApi  = Retrofit.Builder()
             .baseUrl("https://wrapapi.com/")
             .addConverterFactory(MoshiConverterFactory.create())
             .build()
