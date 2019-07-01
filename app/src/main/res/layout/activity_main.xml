@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,6 +9,8 @@
 
     <TextView
         android:id="@+id/main_text"
+        android:textSize="42sp"
+        tools:text="Hello"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -60,6 +63,16 @@
         android:background="#FFFFFF80"
         android:text="Conferencify"
         app:layout_constraintBottom_toTopOf="@id/pokemonButton" />
+
+    <Button
+        android:id="@+id/historyButton"
+        style="@style/TextAppearance.MaterialComponents.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@android:color/holo_blue_light"
+        android:text="Check this"
+        app:layout_constraintBottom_toTopOf="@id/conferenceButton" />
 
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

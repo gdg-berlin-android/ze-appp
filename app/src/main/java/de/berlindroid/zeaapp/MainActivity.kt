@@ -14,6 +14,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.time.LocalTime
+import java.util.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,6 +55,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         conferenceButton.setOnClickListener {
             startActivity(Intent(applicationContext, EmailActivity::class.java))
 
+        }
+
+        historyButton.setOnClickListener {
+            // TODO add actual time here
+            val time = LocalTime.of(3, 15, 10)
+            main_text.text = "The time is: $time"
         }
     }
 
