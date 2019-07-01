@@ -35,6 +35,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
+
+        <activity android:name=".Emails.EmailActivity" />
         <activity android:name=".IamTheRealSplashActivity" />
     </application>
 
