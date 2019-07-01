@@ -3,6 +3,6 @@
     <string name="main_play_label">LET\'S PLAY</string>
     <string name="main_lose_text">YOU LOSE</string>
     <string name="main_baby_loser">Don\'t be such a baby</string>
-    <string name="main_lose_action">OH NOOO</string>
+    <string name="main_lose_action">OH NOOO! You\'re using a pirate version of the app</string>
     <string name="main_zin">YOU WIN</string>
 </resources>
