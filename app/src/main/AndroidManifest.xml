@@ -8,6 +8,8 @@
         I have no idea what I'm doing, just don't touch the manifest as is idk
     -->
     <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
 
     <application
         android:allowBackup="true"

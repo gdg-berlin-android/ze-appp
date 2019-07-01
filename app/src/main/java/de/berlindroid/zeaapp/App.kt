@@ -11,6 +11,10 @@ class App : Application() {
             .baseUrl("https://wrapapi.com/")
             .addConverterFactory(MoshiConverterFactory.create())
             .build()
+        val pokeRetrofit  = Retrofit.Builder()
+            .baseUrl("https://pokeapi.co/")
+            .addConverterFactory(MoshiConverterFactory.create())
+            .build()
     }
 
     override fun onCreate() {

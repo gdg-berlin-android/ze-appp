@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
 
-interface ZeApppApi {
+interface PokeApi {
 
     companion object {
         const val API_KEY = "7UF1tvyFxs4TXQDYq4btuIIfIuHvbSdz"

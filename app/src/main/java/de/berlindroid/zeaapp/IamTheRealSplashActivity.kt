@@ -14,7 +14,12 @@ import androidx.annotation.Nullable
 import androidx.fragment.app.Fragment
 import com.github.paolorotolo.appintro.AppIntroFragment
 import com.github.paolorotolo.appintro.model.SliderPage
+import de.berlindroid.zeaapp.api.GetPokemon
+import de.berlindroid.zeaapp.api.PokeList
 import de.berlindroid.zeaapp.api.ZeApppApi
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class IamTheRealSplashActivity : AppIntro() {
@@ -62,10 +67,18 @@ class IamTheRealSplashActivity : AppIntro() {
 
 
 
-//        val api = App.retrofit.create(ZeApppApi::class.java)
-//        val pokemon =api.getPokemon()
-//
-//        Log.d("pokemon --->",pokemon.results.toString())
+       val api = App.pokeRetrofit.create(ZeApppApi::class.java)
+        api.getPokemon().enqueue(object : Callback<GetPokemon> {
+            override fun onFailure(call: Call<GetPokemon>, t: Throwable) {
+                t.printStackTrace()
+                Log.e("pokemon --->", t.toString())
+            }
+
+            override fun onResponse(call: Call<GetPokemon>, response: Response<GetPokemon>) {
+                Log.d("pokemon --->",response.body()?.results.toString())
+            }
+        })
+
     }
 
     override fun onSkipPressed(currentFragment: Fragment?) {
