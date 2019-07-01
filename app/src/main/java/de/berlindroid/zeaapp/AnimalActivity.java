@@ -1,7 +1,6 @@
 package de.berlindroid.zeaapp;
 
 import android.app.Activity;
-import android.app.DownloadManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
@@ -9,11 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
 import java.io.InputStream;
-import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
@@ -21,8 +20,13 @@ import java.util.Random;
 
 public class AnimalActivity extends Activity {
 
-    final List<String> list = Arrays.asList("https://7esl.com/wp-content/uploads/2018/12/Dog-150x150.png","https://7esl.com/wp-content/uploads/2018/12/Dog-150x150.png","https://7esl.com/wp-content/uploads/2018/12/Ox-150x150.png");
-
+    final List<String> list = Arrays.asList(
+            "https://7esl.com/wp-content/uploads/2018/12/Dog-150x150.png",
+            "https://7esl.com/wp-content/uploads/2018/12/Ox-150x150.png",
+            "https://lorempixel.com/400/400/animals/3/",
+            "https://http.cat/404",
+            "https://http.cat/418"
+    );
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,19 +38,18 @@ public class AnimalActivity extends Activity {
             @Override
             public void onClick(View view) {
                 new DownLoadImage(image).execute(list.get(new Random().nextInt(list.size())));
+                Toast.makeText(AnimalActivity.this, "The best GDG is... every GDG!", Toast.LENGTH_LONG).show();
             }
         });
 
 
     }
 
-
-    //WHY???
-    private class DownLoadImage extends AsyncTask<String,Void, Bitmap>
-    {
+    //WHY??? Because
+    private class DownLoadImage extends AsyncTask<String, Void, Bitmap> {
         private ImageView image;
-        public DownLoadImage(ImageView image)
-        {
+
+        public DownLoadImage(ImageView image) {
             this.image = image;
         }
 
@@ -54,12 +57,11 @@ public class AnimalActivity extends Activity {
         protected Bitmap doInBackground(String... strings) {
             String url = strings[0];
             Bitmap logo = null;
-            try{
+            try {
                 InputStream is = new URL(url).openStream();
                 logo = BitmapFactory.decodeStream(is);
 
-            }catch (Exception ignore)
-            {
+            } catch (Exception ignore) {
 
             }
             return logo;
