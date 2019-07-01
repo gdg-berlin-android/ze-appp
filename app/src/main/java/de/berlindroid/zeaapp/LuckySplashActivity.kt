@@ -11,12 +11,13 @@ class LuckySplashActivity : AppCompatActivity(), RandomizerInterface {
 
     override fun onRandomNumber(number: Int) {
         textView?.setText("${number}")
-        if (number == 7 || number == 77 || number == 5) {
+        if (number == 7 || number == 77 || number == 5 || (BuildConfig.DEBUG && counter++ == 10)) {
             startActivity(Intent(this, SplashActivity::class.java))
             randomizer.stop()
         }
     }
 
+    private var counter: Int = 0
     var textView: TextView? = null
 
     val randomizer:Randomizer = Randomizer(this)
