@@ -23,8 +23,7 @@ class IamTheRealSplashActivity : AppIntro() {
 
         // Note here that we DO NOT use setContentView();
 
-        // Instead of fragments, you can also use our default slide.
-        // Just create a `SliderPage` and provide title, description, background and image.
+        // Instead of fragments, you can also use our default slide.ground and image.
         // AppIntro will do the rest.
         var sliderPage = SliderPage()
         sliderPage.title = "That's going to be an awesome community app!"

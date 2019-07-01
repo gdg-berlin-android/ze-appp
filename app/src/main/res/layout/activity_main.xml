@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<android.support.constraint.motion.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layoutDescription="@xml/scene_01"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/jwimage"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/jw"
+        >
+
+    </ImageView>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</android.support.constraint.motion.MotionLayout>
