@@ -48,7 +48,7 @@ class IamTheRealSplashActivity : AppIntro() {
         sliderPage = SliderPage()
         sliderPage.title = "Plugging my twitter here"
         sliderPage.imageDrawable = R.drawable.ch
-        sliderPage.description = "follow me on @rashiq"
+        sliderPage.description = "follow me on <REDACTED>"
         addSlide(AppIntroFragment.newInstance(sliderPage))
 
         // OPTIONAL METHODS
