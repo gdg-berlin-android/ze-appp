@@ -23,7 +23,7 @@ interface ZeApppApi {
 
      */
     @POST("use/mariobodemann/conferences/android/latest")
-    fun latestAndroidConference(@Field("wrapAPIKey") key: String) : Conference
+    fun latestAndroidConference(@Field("wrapAPIKey") key: String): Conference
 
 }
 

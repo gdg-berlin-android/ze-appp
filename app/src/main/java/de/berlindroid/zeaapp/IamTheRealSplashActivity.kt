@@ -46,6 +46,12 @@ class IamTheRealSplashActivity : AppIntro() {
         sliderPage.description = "< HERE >"
         addSlide(AppIntroFragment.newInstance(sliderPage))
 
+        sliderPage = SliderPage()
+        sliderPage.title = "Plugging my twitter here"
+        sliderPage.imageDrawable = R.drawable.ch
+        sliderPage.description = "follow me on @rashiq"
+        addSlide(AppIntroFragment.newInstance(sliderPage))
+
         // OPTIONAL METHODS
         // Override bar/separator color.
         setBarColor(Color.parseColor("#3F51B5"))
