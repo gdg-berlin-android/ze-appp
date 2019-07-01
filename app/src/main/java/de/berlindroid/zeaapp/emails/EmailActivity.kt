@@ -1,4 +1,4 @@
-package de.berlindroid.zeaapp.Emails
+package de.berlindroid.zeaapp.emails
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import com.github.paolorotolo.appintro.AppIntro
 import com.github.paolorotolo.appintro.AppIntroFragment
 import com.github.paolorotolo.appintro.model.SliderPage
-import de.berlindroid.zeaapp.api.GetPokemon
+import de.berlindroid.zeaapp.api.ApiPokemon
 import de.berlindroid.zeaapp.api.ZeApppApi
 import retrofit2.Call
 import retrofit2.Callback
@@ -60,13 +60,13 @@ class IamTheRealSplashActivity : AppIntro() {
 
 
         val api = App.pokeRetrofit.create(ZeApppApi::class.java)
-        api.getPokemon().enqueue(object : Callback<GetPokemon> {
-            override fun onFailure(call: Call<GetPokemon>, t: Throwable) {
+        api.getPokemon().enqueue(object : Callback<ApiPokemon> {
+            override fun onFailure(call: Call<ApiPokemon>, t: Throwable) {
                 t.printStackTrace()
                 Log.e("pokemon --->", t.toString())
             }
 
-            override fun onResponse(call: Call<GetPokemon>, response: Response<GetPokemon>) {
+            override fun onResponse(call: Call<ApiPokemon>, response: Response<ApiPokemon>) {
                 Log.d("pokemon --->", response.body()?.results.toString())
             }
         })

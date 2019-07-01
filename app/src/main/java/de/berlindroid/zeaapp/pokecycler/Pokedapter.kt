@@ -10,11 +10,9 @@ import androidx.appcompat.widget.TooltipCompat
 import androidx.core.view.AccessibilityDelegateCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import de.berlindroid.zeaapp.R
 import kotlinx.android.synthetic.main.item_pokemon.view.*
-import java.lang.RuntimeException
 
 class Pokedapter : RecyclerView.Adapter<Pokeholder>() {
 
@@ -33,7 +31,7 @@ class Pokedapter : RecyclerView.Adapter<Pokeholder>() {
 
     override fun onBindViewHolder(holder: Pokeholder, position: Int) {
         holder.bind(pokemons[position])
-        var view = holder.itemView
+        val view = holder.itemView
         ViewCompat.setAccessibilityDelegate(view, PokeAccessibilityDelegate())
         TooltipCompat.setTooltipText(view, view.toastText())
     }
@@ -41,12 +39,14 @@ class Pokedapter : RecyclerView.Adapter<Pokeholder>() {
 }
 
 data class Pokemon(
-    val name: String
+    val name: String,
+    val url: String,
+    val image: String?
 )
 
-class Pokeholder(val view: View) : RecyclerView.ViewHolder(view) {
+class Pokeholder(view: View) : RecyclerView.ViewHolder(view) {
     fun bind(pokemon: Pokemon) {
-        itemView.pokeName.text = pokemon.name
+        itemView.pokeName.text = pokemon.name.capitalize()
     }
 }
 
@@ -55,6 +55,7 @@ private fun View?.toastText(): CharSequence {
 }
 
 private const val ACTION_TOAST_NAME = 348732
+
 class PokeAccessibilityDelegate : AccessibilityDelegateCompat() {
 
     override fun onInitializeAccessibilityNodeInfo(
@@ -62,16 +63,18 @@ class PokeAccessibilityDelegate : AccessibilityDelegateCompat() {
         info: AccessibilityNodeInfoCompat?
     ) {
         super.onInitializeAccessibilityNodeInfo(host, info)
-        AccessibilityNodeInfoCompat.AccessibilityActionCompat(ACTION_TOAST_NAME, "Toast ${host.toastText()}")
+        AccessibilityNodeInfoCompat.AccessibilityActionCompat(
+            ACTION_TOAST_NAME,
+            "Toast ${host.toastText()}"
+        )
         info?.addAction(ACTION_TOAST_NAME)
     }
-
 
 
     override fun performAccessibilityAction(host: View?, action: Int, args: Bundle?): Boolean {
         return when (action) {
             ACTION_TOAST_NAME -> {
-                host?.let{
+                host?.let {
                     toast(it, host.toastText().toString())
                 }
                 true
@@ -80,7 +83,7 @@ class PokeAccessibilityDelegate : AccessibilityDelegateCompat() {
         }
     }
 
-    private fun toast(view:View, message:String) {
+    private fun toast(view: View, message: String) {
         toast?.cancel()
         Toast.makeText(view.context, message, Toast.LENGTH_SHORT).apply {
             toast = this

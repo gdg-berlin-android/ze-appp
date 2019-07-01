@@ -5,6 +5,6 @@
 
     <fragment
         android:id="@+id/emailFragments"
-        android:name="de.berlindroid.zeaapp.Emails.EmailFragments"
+        android:name="de.berlindroid.zeaapp.emails.EmailFragments"
         android:label="EmailFragments" />
 </navigation>

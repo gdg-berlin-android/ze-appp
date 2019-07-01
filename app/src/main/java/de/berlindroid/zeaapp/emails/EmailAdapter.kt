@@ -1,4 +1,4 @@
-package de.berlindroid.zeaapp.Emails
+package de.berlindroid.zeaapp.emails
 
 import android.view.LayoutInflater
 import android.view.View

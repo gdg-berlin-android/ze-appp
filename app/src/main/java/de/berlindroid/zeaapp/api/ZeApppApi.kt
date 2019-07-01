@@ -28,7 +28,7 @@ interface ZeApppApi {
 
 
     @GET("api/v2/pokemon/?limit=999")
-    fun getPokemon(): Call<GetPokemon>
+    fun getPokemon(): Call<ApiPokemon>
 
 }
 

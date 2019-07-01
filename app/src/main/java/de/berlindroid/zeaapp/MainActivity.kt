@@ -6,8 +6,8 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
-import de.berlindroid.zeaapp.Emails.EmailActivity
-import de.berlindroid.zeaapp.api.GetPokemon
+import de.berlindroid.zeaapp.emails.EmailActivity
+import de.berlindroid.zeaapp.api.ApiPokemon
 import de.berlindroid.zeaapp.api.PokeApi
 import de.berlindroid.zeaapp.api.ZeApppApi
 import kotlinx.android.synthetic.main.activity_main.*
@@ -31,6 +31,23 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         pokemonButton.setOnClickListener {
             val api = App.pokeRetrofit.create(ZeApppApi::class.java)
             startActivity(Intent(this, PokemonActivity::class.java))
+        }
+
+        pokemonButton.setOnLongClickListener {
+            val api = App.pokeRetrofit.create(PokeApi::class.java)
+            api.getPokemon().enqueue(object : Callback<ApiPokemon> {
+                override fun onFailure(call: Call<ApiPokemon>, t: Throwable) {
+                    t.printStackTrace()
+                    Toast.makeText(this@MainActivity, "pokemon ---> ${t.toString()}", Toast.LENGTH_LONG).show()
+                }
+
+                override fun onResponse(call: Call<ApiPokemon>, response: Response<ApiPokemon>) {
+                    runOnUiThread {
+                        main_text.text = response.body()?.results?.joinToString {  it.name }
+                    }
+                }
+            })
+            true
         }
 
         conferenceButton.setOnClickListener {
