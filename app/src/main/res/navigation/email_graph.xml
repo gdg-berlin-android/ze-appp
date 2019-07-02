@@ -6,5 +6,18 @@
     <fragment
         android:id="@+id/emailFragments"
         android:name="de.berlindroid.zeaapp.emails.EmailFragments"
-        android:label="EmailFragments" />
+        android:label="EmailFragments" >
+        <action
+            android:id="@+id/action_emailFragments_to_details"
+            app:destination="@id/details" />
+    </fragment>
+    <fragment
+        android:id="@+id/details"
+        android:name="de.berlindroid.zeaapp.emails.Details"
+        android:label="Details" >
+        <argument
+            android:name="email"
+            app:argType="string"
+            android:defaultValue="email1" />
+    </fragment>
 </navigation>
