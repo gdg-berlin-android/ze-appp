@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.snackbar.Snackbar
 import de.berlindroid.zeaapp.api.ApiPokemon
@@ -40,6 +41,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        if (Math.random() >= 0.31415926535)
+            Glide.with(this).load(R.drawable.clippy).into(clippy_container)
 
         initOnClickListeners()
         initRest()
