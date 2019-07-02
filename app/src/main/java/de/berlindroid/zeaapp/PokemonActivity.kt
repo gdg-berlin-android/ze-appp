@@ -39,8 +39,7 @@ class PokemonActivity : AppCompatActivity() {
                     Pokemon(
                         HttpUrl.parse(it.url)?.pathSegments()?.lastButOne()!!,
                         it.name,
-                        it.url,
-                        it.sprites?.front_default
+                        it.url
                     )
                 }
                 Log.d(PokemonActivity::class.java.simpleName, "Pokemon $pokemon")
@@ -50,7 +49,8 @@ class PokemonActivity : AppCompatActivity() {
 
             private fun <T> List<T>.lastButOne(): T {
                 // TODO: Does this actually work?
-                this[this.size -2]
+                // IT DOES, TESTED IN PRODUCTION
+                return this[this.size -2]
             }
         })
     }

@@ -1,5 +1,6 @@
 package de.berlindroid.zeaapp.pokecycler
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import de.berlindroid.zeaapp.PokemonDetailsActivity
 import de.berlindroid.zeaapp.R
 import kotlinx.android.synthetic.main.item_pokemon.view.*
 
@@ -42,19 +44,23 @@ class Pokedapter : RecyclerView.Adapter<Pokeholder>() {
 data class Pokemon(
     val id: String,
     val name: String,
-    val url: String,
-    val image: String?
+    val url: String
 )
 
 class Pokeholder(view: View) : RecyclerView.ViewHolder(view) {
     fun bind(pokemon: Pokemon) {
         itemView.pokeName.text = pokemon.name.capitalize()
 
-        val pokeImage = "https://raw.githubuserco…er/sprites/pokemon/${pokemon.id}.png"
+        val pokeImage = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png"
         Glide.with(itemView.context).load(pokeImage).into(itemView.pokeImage)
 
         itemView.setOnClickListener {
             Toast.makeText(it.context, pokemon.url, Toast.LENGTH_LONG).show();
+        }
+
+        itemView.setOnClickListener {
+            // Open details hacky way: PokemonDetailsActivity
+            itemView.context.startActivity(Intent(itemView.context, PokemonDetailsActivity::class.java))
         }
     }
 }

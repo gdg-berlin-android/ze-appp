@@ -17,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".WhereAreChetAndRomainActivity"></activity>
+        <activity android:name=".PokemonDetailsActivity"></activity>
+        <activity android:name=".WhereAreChetAndRomainActivity" />
         <activity android:name=".LuckySplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
