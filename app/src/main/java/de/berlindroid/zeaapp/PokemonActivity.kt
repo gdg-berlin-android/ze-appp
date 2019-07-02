@@ -9,6 +9,7 @@ import de.berlindroid.zeaapp.api.ZeApppApi
 import de.berlindroid.zeaapp.pokecycler.Pokedapter
 import de.berlindroid.zeaapp.pokecycler.Pokemon
 import kotlinx.android.synthetic.main.pokemon_layout.*
+import okhttp3.HttpUrl
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -36,6 +37,7 @@ class PokemonActivity : AppCompatActivity() {
             override fun onResponse(call: Call<ApiPokemon>, response: Response<ApiPokemon>) {
                 val pokemon = response.body()!!.results.map {
                     Pokemon(
+                        HttpUrl.parse(it.url)?.pathSegments()?.last()!!,
                         it.name,
                         it.url,
                         it.sprites?.front_default

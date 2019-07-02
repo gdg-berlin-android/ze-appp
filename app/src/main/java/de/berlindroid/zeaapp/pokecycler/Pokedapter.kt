@@ -11,6 +11,7 @@ import androidx.core.view.AccessibilityDelegateCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import de.berlindroid.zeaapp.R
 import kotlinx.android.synthetic.main.item_pokemon.view.*
 
@@ -39,6 +40,7 @@ class Pokedapter : RecyclerView.Adapter<Pokeholder>() {
 }
 
 data class Pokemon(
+    val id: String,
     val name: String,
     val url: String,
     val image: String?
@@ -47,6 +49,13 @@ data class Pokemon(
 class Pokeholder(view: View) : RecyclerView.ViewHolder(view) {
     fun bind(pokemon: Pokemon) {
         itemView.pokeName.text = pokemon.name.capitalize()
+
+        val pokeImage = "https://raw.githubuserco…er/sprites/pokemon/${pokemon.id}.png"
+        Glide.with(itemView.context).load(pokeImage).into(itemView.pokeImage)
+
+        itemView.setOnClickListener {
+            Toast.makeText(it.context, pokemon.url, Toast.LENGTH_LONG).show();
+        }
     }
 }
 
