@@ -61,7 +61,9 @@ class Pokeholder(view: View) : RecyclerView.ViewHolder(view) {
 
         itemView.setOnClickListener {
             // Open details hacky way: PokemonDetailsActivity
-            itemView.context.startActivity(Intent(itemView.context, PokemonDetailsActivity::class.java))
+            val intent = Intent(itemView.context, PokemonDetailsActivity::class.java)
+            intent.putExtra(PokemonDetailsActivity.POKEMON_DETAILS_ACTIVITY_POKEMON_ID, pokemon.id)
+            itemView.context.startActivity(intent)
         }
     }
 }
