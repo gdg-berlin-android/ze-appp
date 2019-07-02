@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
@@ -78,6 +79,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             // TODO add actual time here
             val time = LocalTime.now()
             main_text.text = "The time is: $time"
+        }
+
+        findViewById<Button>(R.id.whereAreChetAndRomain).setOnClickListener {
+            startActivity(Intent(this, WhereAreChetAndRomainActivity::class.java))
         }
     }
 
