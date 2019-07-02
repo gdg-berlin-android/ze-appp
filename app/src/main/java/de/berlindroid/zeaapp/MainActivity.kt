@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.snackbar.Snackbar
 import de.berlindroid.zeaapp.emails.EmailActivity
 import de.berlindroid.zeaapp.api.ApiPokemon
@@ -77,13 +78,29 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         historyButton.setOnClickListener {
             // TODO add actual time here
-            val time = LocalTime.now()
-            main_text.text = "The time is: $time"
+            showModal()
         }
 
         findViewById<Button>(R.id.whereAreChetAndRomain).setOnClickListener {
             startActivity(Intent(this, WhereAreChetAndRomainActivity::class.java))
         }
+    }
+
+    private fun showModal() {
+        val bottomSheetDialog = BottomSheetDialog(this)
+        val sheetView = layoutInflater.inflate(R.layout.conference_modal_dialog, null)
+        sheetView.findViewById<View>(R.id.shutAppContainer).setOnClickListener {
+            Toast.makeText(this@MainActivity, "Bye Bye", Toast.LENGTH_LONG).show()
+            this.finishAffinity()
+        }
+        sheetView.findViewById<View>(R.id.timerContainer).setOnClickListener {
+            bottomSheetDialog.dismiss()
+            val time = LocalTime.now()
+            main_text.text = "The time is: $time"
+        }
+        bottomSheetDialog.setContentView(sheetView)
+        bottomSheetDialog.show()
+
     }
 
     private fun initOnClickListeners() {
