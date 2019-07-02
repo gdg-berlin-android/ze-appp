@@ -77,4 +77,6 @@ dependencies {
     //
     implementation 'com.github.AppIntro:AppIntro:6.0.0-alpha3'
 
+    testImplementation 'org.mockito:mockito-core:2.28.2'
+
 }
