@@ -31,4 +31,15 @@
             />
 
     </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/containerRedirecting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Show schedule for Droidcon Berlin 2019"/>
+    </FrameLayout>
 </LinearLayout>

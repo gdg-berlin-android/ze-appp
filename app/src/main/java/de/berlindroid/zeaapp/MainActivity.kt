@@ -104,6 +104,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             val time = LocalTime.now()
             main_text.text = "The time is: $time"
         }
+        sheetView.findViewById<View>(R.id.containerRedirecting).setOnClickListener{
+            startActivity(Intent(this@MainActivity, WebviewActivity::class.java))
+        }
         bottomSheetDialog.setContentView(sheetView)
         bottomSheetDialog.show()
 

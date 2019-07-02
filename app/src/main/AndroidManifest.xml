@@ -39,6 +39,7 @@
         <activity android:name=".emails.EmailActivity" />
         <activity android:name=".IamTheRealSplashActivity" />
         <activity android:name=".PokemonActivity" />
+        <activity android:name=".WebviewActivity" />
     </application>
 
 </manifest>
