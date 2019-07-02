@@ -4,6 +4,7 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
@@ -12,19 +13,20 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.snackbar.Snackbar
-import de.berlindroid.zeaapp.emails.EmailActivity
 import de.berlindroid.zeaapp.api.ApiPokemon
 import de.berlindroid.zeaapp.api.PokeApi
 import de.berlindroid.zeaapp.api.ZeApppApi
+import de.berlindroid.zeaapp.emails.EmailActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.Main
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.lang.Exception
 import java.time.LocalTime
-import java.util.*
 import kotlin.coroutines.CoroutineContext
 
 class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
@@ -43,7 +45,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
 
         main_text.setOnClickListener {
             numberOfTaps++
-            when(numberOfTaps){
+            when (numberOfTaps) {
                 7 -> {
                     runEasterEgg()
                 }
@@ -78,7 +80,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
             showModal()
         }
 
-        historyButton.setOnLongClickListener(){
+        historyButton.setOnLongClickListener() {
             // TODO add actual time here
             val time = LocalTime.now()
             main_text.text = "The time is: $time"
@@ -95,13 +97,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
 
         launch {
             try {
-                val response = kApi.getPokemon().await()
+                val response = kApi.getPokemon()
                 withContext(Main) {
                     //response.results
                     main_text.text = response.results?.joinToString { it.name }
                 }
             } catch (e: Exception) {
-                main_text.text = "Failed to load pokemons"
+                withContext(Main) {
+                    main_text.text = "Failed to load pokemons"
+                }
+                Log.e("something", "MESSAGE", e)
             }
         }
     }
@@ -134,7 +139,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
             val time = LocalTime.now()
             main_text.text = "The time is: $time"
         }
-        sheetView.findViewById<View>(R.id.containerRedirecting).setOnClickListener{
+        sheetView.findViewById<View>(R.id.containerRedirecting).setOnClickListener {
             startActivity(Intent(this@MainActivity, WebviewActivity::class.java))
         }
         bottomSheetDialog.setContentView(sheetView)
@@ -169,7 +174,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
 
     }
 
-    fun runEasterEgg(){
+    fun runEasterEgg() {
         //Reset the number of taps
         numberOfTaps = 0
         val builder = AlertDialog.Builder(this)
