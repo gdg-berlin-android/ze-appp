@@ -2,6 +2,8 @@ package de.berlindroid.zeaapp
 
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import de.berlindroid.zeaapp.api.ApiPokemon
@@ -15,6 +17,22 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class PokemonActivity : AppCompatActivity() {
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        super.onCreateOptionsMenu(menu)
+        menuInflater.inflate(R.menu.poke_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId){
+            R.id.sort -> {
+                // todo: sort the pokelist, pleaseee.
+                true
+            }
+            else -> false
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
