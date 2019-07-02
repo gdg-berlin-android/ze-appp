@@ -1,6 +1,7 @@
 package de.berlindroid.zeaapp;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
@@ -12,13 +13,20 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+
 import java.io.InputStream;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
+import de.berlindroid.zeaapp.compliments.ComplimentImpl;
+import de.berlindroid.zeaapp.compliments.ComplimentProvider;
+
 public class AnimalActivity extends Activity {
+
+    private ComplimentProvider complimentProvider = new ComplimentImpl();
 
     final List<String> list = Arrays.asList(
             "https://7esl.com/wp-content/uploads/2018/12/Dog-150x150.png",
@@ -42,6 +50,13 @@ public class AnimalActivity extends Activity {
             }
         });
 
+        final Button complimentButton = findViewById(R.id.complimentButton);
+        complimentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new MaterialAlertDialogBuilder(getBaseContext()).setMessage(complimentProvider.getCompliment()).create().show();
+            }
+        });
 
     }
 

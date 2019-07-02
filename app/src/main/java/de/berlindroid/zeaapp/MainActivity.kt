@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
         }
 
         jumpingButton.setOnClickListener {
-            it.animate().translationY(Math.random().toFloat()).translationX(Math.random().toFloat()).setDuration(20).start()
+            it.animate().translationY(Math.random().toFloat() * 100).translationX(Math.random().toFloat() * 100).setDuration(20).start()
         }
 
         italianButton.setOnClickListener {
