@@ -77,8 +77,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         historyButton.setOnClickListener {
-            // TODO add actual time here
             showModal()
+        }
+
+        historyButton.setOnLongClickListener(){
+            // TODO add actual time here
+            val time = LocalTime.now()
+            main_text.text = "The time is: $time"
+            true
         }
 
         findViewById<Button>(R.id.whereAreChetAndRomain).setOnClickListener {
