@@ -24,11 +24,10 @@ class SplashActivity : Activity() {
             .load(R.raw.nyan)
             .into(imageView)
 
-
         GlobalScope.launch {
             delay(2000)
             startActivity(Intent(this@SplashActivity,
-                IamTheRealSplashActivity::class.java))
+                LogoActivity::class.java))
         }
     }
 }
