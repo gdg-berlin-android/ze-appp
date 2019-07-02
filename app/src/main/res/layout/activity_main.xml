@@ -18,7 +18,7 @@
         android:id="@+id/jwimage"
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:src="@drawable/jw"></ImageView>
+        android:src="@drawable/jw" />
 
     <Button
         android:id="@+id/main_play_button"

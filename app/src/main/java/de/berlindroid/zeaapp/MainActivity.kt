@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         historyButton.setOnClickListener {
             // TODO add actual time here
-            val time = LocalTime.of(3, 15, 10)
+            val time = LocalTime.now()
             main_text.text = "The time is: $time"
         }
     }
