@@ -113,4 +113,11 @@
         android:layout_margin="8dp"
         style="@style/TextAppearance.MaterialComponents.Button"/>
 
+    <Button
+        android:id="@+id/jumpingButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Catch Me"
+        app:layout_constraintBottom_toTopOf="@id/tryToLottie"/>
+
 </androidx.constraintlayout.motion.widget.MotionLayout>

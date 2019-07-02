@@ -53,6 +53,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
 
         }
 
+        jumpingButton.setOnClickListener {
+            it.animate().translationY(Math.random().toFloat()).translationX(Math.random().toFloat()).setDuration(20).start()
+        }
+
         italianButton.setOnClickListener {
             val intent = Intent(this, AnimalActivity::class.java)
             startActivity(intent)
