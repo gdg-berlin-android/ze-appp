@@ -75,9 +75,9 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:2.0.0"
     implementation "androidx.navigation:navigation-ui-ktx:2.0.0"
 
-    //
+    // //
     implementation 'com.github.AppIntro:AppIntro:6.0.0-alpha3'
 
-    testImplementation 'org.mockito:mockito-core:2.28.2'
-
+    implementation 'com.google.ar:core:1.10.0'
+    implementation 'de.javagl:obj:0.2.1'
 }

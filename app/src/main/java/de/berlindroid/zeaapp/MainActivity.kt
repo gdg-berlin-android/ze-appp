@@ -19,6 +19,7 @@ import de.berlindroid.zeaapp.api.ApiPokemon
 import de.berlindroid.zeaapp.api.PokeApi
 import de.berlindroid.zeaapp.api.ZeApppApi
 import de.berlindroid.zeaapp.emails.EmailActivity
+import helloar.HelloArActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.Main
@@ -71,6 +72,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
         italianButton.setOnClickListener {
             val intent = Intent(this, AnimalActivity::class.java)
             startActivity(intent)
+        }
+
+        italianButton.setOnLongClickListener {
+            val intent = Intent(this, HelloArActivity::class.java)
+            startActivity(intent)
+            true
         }
 
         pokemonButton.setOnClickListener {
