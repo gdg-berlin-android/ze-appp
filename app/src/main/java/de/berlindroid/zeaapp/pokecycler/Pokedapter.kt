@@ -51,7 +51,8 @@ class Pokeholder(view: View) : RecyclerView.ViewHolder(view) {
     fun bind(pokemon: Pokemon) {
         itemView.pokeName.text = pokemon.name.capitalize()
 
-        val pokeImage = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png"
+//        val pokeImage = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png"
+        val pokeImage = "https://img.pokemondb.net/sprites/black-white/anim/normal/${pokemon.name}.gif"
         Glide.with(itemView.context).load(pokeImage).into(itemView.pokeImage)
 
         itemView.setOnClickListener {
