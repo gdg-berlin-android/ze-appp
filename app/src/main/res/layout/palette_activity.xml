@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/preview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="32dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/stroke"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.625"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/new_image" />
+
+    <Button
+        android:id="@+id/new_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/sw1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@id/new_image"
+        android:background="@drawable/stroke"
+        app:layout_constraintEnd_toStartOf="@+id/sw2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/sw2"
+        android:layout_width="40dp"
+        android:background="@drawable/stroke"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@id/new_image"
+        app:layout_constraintEnd_toStartOf="@+id/sw3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/sw1" />
+
+    <View
+        android:id="@+id/sw3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/stroke"
+        app:layout_constraintTop_toBottomOf="@id/new_image"
+        app:layout_constraintEnd_toStartOf="@+id/sw4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/sw2" />
+
+    <View
+        android:id="@+id/sw4"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/stroke"
+        app:layout_constraintTop_toBottomOf="@id/new_image"
+        app:layout_constraintEnd_toStartOf="@+id/sw5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/sw3" />
+
+    <View
+        android:id="@+id/sw5"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/stroke"
+        app:layout_constraintTop_toBottomOf="@id/new_image"
+        app:layout_constraintEnd_toStartOf="@+id/sw6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/sw4" />
+
+    <View
+        android:id="@+id/sw6"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/stroke"
+        app:layout_constraintTop_toBottomOf="@id/new_image"
+        app:layout_constraintEnd_toStartOf="@+id/new_image"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/sw5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

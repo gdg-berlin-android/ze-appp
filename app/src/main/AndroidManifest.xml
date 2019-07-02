@@ -46,6 +46,7 @@
         <activity android:name=".IamTheRealSplashActivity" />
         <activity android:name=".PokemonActivity" />
         <activity android:name=".WebviewActivity" />
+        <activity android:name=".PaletteActivity" />
     </application>
 
 </manifest>

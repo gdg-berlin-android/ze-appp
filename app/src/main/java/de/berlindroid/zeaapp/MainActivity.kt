@@ -58,6 +58,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
             it.animate().rotationBy(15f).translationY(Math.random().toFloat() * 100).translationX(Math.random().toFloat() * 100).setDuration(20).start()
         }
 
+        jumpingButton.setOnLongClickListener {
+            val intent = Intent(this, PaletteActivity::class.java)
+            startActivity(intent)
+            true
+        }
+
         italianButton.setOnClickListener {
             val intent = Intent(this, AnimalActivity::class.java)
             startActivity(intent)
