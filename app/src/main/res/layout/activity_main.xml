@@ -10,7 +10,7 @@
     <TextView
         android:id="@+id/main_text"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:textSize="42sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/droidcon_icon"
@@ -32,7 +32,8 @@
         android:id="@+id/jwimage"
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:src="@drawable/jw" />
+        android:src="@drawable/jw"
+        />
 
     <Button
         android:id="@+id/main_play_button"
