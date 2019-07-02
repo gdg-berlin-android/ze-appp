@@ -239,7 +239,7 @@ public class HelloArActivity extends AppCompatActivity implements GLSurfaceView.
 
       virtualObjectShadow.createOnGlThread(
           /*context=*/ this, "models/andy_shadow.obj", "models/andy_shadow.png");
-      virtualObjectShadow.setBlendMode(ObjectRenderer.BlendMode.Shadow);
+//      virtualObjectShadow.setBlendMode(ObjectRenderer.BlendMode.Shadow);
       virtualObjectShadow.setMaterialProperties(1.0f, 0.0f, 0.0f, 1.0f);
 
     } catch (IOException e) {
