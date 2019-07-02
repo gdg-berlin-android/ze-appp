@@ -90,6 +90,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
         findViewById<Button>(R.id.whereAreChetAndRomain).setOnClickListener {
             startActivity(Intent(this, WhereAreChetAndRomainActivity::class.java))
         }
+
+        findViewById<Button>(R.id.tryToLottie).setOnClickListener {
+            startActivity(Intent(this, AnimateMeEverywhere::class.java))
+        }
     }
 
     private fun newSchoolRequest() {

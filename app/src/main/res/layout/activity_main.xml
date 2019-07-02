@@ -101,5 +101,16 @@
         android:layout_margin="8dp"
         style="@style/TextAppearance.MaterialComponents.Button"/>
 
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tryToLottie"
+        android:text="Lottie"
+        android:background="@color/colorAccent"
+        app:layout_constraintBottom_toTopOf="@+id/historyButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="8dp"
+        style="@style/TextAppearance.MaterialComponents.Button"/>
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

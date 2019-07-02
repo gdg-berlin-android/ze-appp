@@ -19,6 +19,7 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".PokemonDetailsActivity"></activity>
         <activity android:name=".WhereAreChetAndRomainActivity" />
+        <activity android:name=".AnimateMeEverywhere" />
         <activity android:name=".LuckySplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
