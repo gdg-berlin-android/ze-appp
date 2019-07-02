@@ -37,7 +37,7 @@ class PokemonActivity : AppCompatActivity() {
             override fun onResponse(call: Call<ApiPokemon>, response: Response<ApiPokemon>) {
                 val pokemon = response.body()!!.results.map {
                     Pokemon(
-                        HttpUrl.parse(it.url)?.pathSegments()?.last()!!,
+                        HttpUrl.parse(it.url)?.pathSegments()?.lastButOne()!!,
                         it.name,
                         it.url,
                         it.sprites?.front_default
@@ -46,6 +46,11 @@ class PokemonActivity : AppCompatActivity() {
                 Log.d(PokemonActivity::class.java.simpleName, "Pokemon $pokemon")
                 adapter.pokemons.addAll(pokemon)
                 adapter.notifyDataSetChanged()
+            }
+
+            private fun <T> List<T>.lastButOne(): T {
+                // TODO: Does this actually work?
+                this[this.size -2]
             }
         })
     }
