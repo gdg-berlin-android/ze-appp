@@ -13,8 +13,6 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-
 import java.io.InputStream;
 import java.net.URL;
 import java.util.Arrays;
@@ -54,7 +52,11 @@ public class AnimalActivity extends Activity {
         complimentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new MaterialAlertDialogBuilder(getBaseContext()).setMessage(complimentProvider.getCompliment()).create().show();
+                new AlertDialog
+                        .Builder(AnimalActivity.this)
+                        .setMessage(complimentProvider.getCompliment())
+                        .create()
+                        .show();
             }
         });
 
