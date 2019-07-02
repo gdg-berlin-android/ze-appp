@@ -6,6 +6,10 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
 
+/**
+ * @deprecated Use {@link PokeCoroutinesApi} instead(for gods sake!)
+ */
+@Deprecated(replaceWith = ReplaceWith("KPokeApi"), level = DeprecationLevel.WARNING, message = "Hello, DroiconBerlin!")
 interface PokeApi {
 
     companion object {

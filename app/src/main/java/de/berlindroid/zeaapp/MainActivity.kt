@@ -17,14 +17,21 @@ import de.berlindroid.zeaapp.api.ApiPokemon
 import de.berlindroid.zeaapp.api.PokeApi
 import de.berlindroid.zeaapp.api.ZeApppApi
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.*
+import kotlinx.coroutines.Dispatchers.Main
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.lang.Exception
 import java.time.LocalTime
 import java.util.*
+import kotlin.coroutines.CoroutineContext
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
+    override val coroutineContext: CoroutineContext
+        get() = SupervisorJob()
     var numberOfTaps: Int = 0
+
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,18 +63,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         pokemonButton.setOnLongClickListener {
             val api = App.pokeRetrofit.create(PokeApi::class.java)
-            api.getPokemon().enqueue(object : Callback<ApiPokemon> {
-                override fun onFailure(call: Call<ApiPokemon>, t: Throwable) {
-                    t.printStackTrace()
-                    Toast.makeText(this@MainActivity, "pokemon ---> ${t.toString()}", Toast.LENGTH_LONG).show()
-                }
 
-                override fun onResponse(call: Call<ApiPokemon>, response: Response<ApiPokemon>) {
-                    runOnUiThread {
-                        main_text.text = response.body()?.results?.joinToString {  it.name }
-                    }
-                }
-            })
+            newSchoolRequest()
+            //oldSchoolRequest(api)
             true
         }
 
@@ -90,6 +88,38 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         findViewById<Button>(R.id.whereAreChetAndRomain).setOnClickListener {
             startActivity(Intent(this, WhereAreChetAndRomainActivity::class.java))
         }
+    }
+
+    private fun newSchoolRequest() {
+        val kApi = App.pokeRetrofit.create(KPokeApi::class.java)
+
+        launch {
+            try {
+                val response = kApi.getPokemon().await()
+                withContext(Main) {
+                    //response.results
+                    main_text.text = response.results?.joinToString { it.name }
+                }
+            } catch (e: Exception) {
+                main_text.text = "Failed to load pokemons"
+            }
+        }
+    }
+
+    private fun oldSchoolRequest(api: PokeApi) {
+        api.getPokemon().enqueue(object : Callback<ApiPokemon> {
+            override fun onFailure(call: Call<ApiPokemon>, t: Throwable) {
+                t.printStackTrace()
+                Toast.makeText(this@MainActivity, "pokemon ---> ${t.toString()}", Toast.LENGTH_LONG)
+                    .show()
+            }
+
+            override fun onResponse(call: Call<ApiPokemon>, response: Response<ApiPokemon>) {
+                runOnUiThread {
+                    main_text.text = response.body()?.results?.joinToString { it.name }
+                }
+            }
+        })
     }
 
     private fun showModal() {
