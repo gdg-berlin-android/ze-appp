@@ -1,5 +1,6 @@
 package de.berlindroid.zeaapp
 
+import android.annotation.SuppressLint
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Build
@@ -135,6 +136,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
         })
     }
 
+    @SuppressLint("NewApi")
     private fun showModal() {
         val bottomSheetDialog = BottomSheetDialog(this)
         val sheetView = layoutInflater.inflate(R.layout.conference_modal_dialog, null)
