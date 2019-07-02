@@ -6,4 +6,32 @@
     android:layout_height="match_parent"
     tools:context=".PokemonDetailsActivity">
 
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:backgroundTint="#2196F3"
+        android:gravity="center_horizontal"
+        android:text="Pika"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/pokeimage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        app:srcCompat="@drawable/chet" />
+
+    <TextView
+        android:id="@+id/randomFact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="randomfact"
+        app:layout_constraintBottom_toBottomOf="@+id/pokeimage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

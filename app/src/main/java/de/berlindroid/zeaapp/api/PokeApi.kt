@@ -36,7 +36,7 @@ interface PokeApi {
     fun getPokemon(): Call<ApiPokemon>
 
     @GET("api/v2/pokemon/{id}")
-    fun getPokemonDetail(@Path("id") id: String): Call<ApiPokemonDetail>
+    suspend fun getPokemonDetail(@Path("id") id: String): ApiPokemonDetail
 
 }
 
