@@ -188,6 +188,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
                 Toast.LENGTH_LONG
             ).show()
         }
+
+        doSomthing.setOnClickListener {
+            Toast.makeText(
+                this,
+                "I did it but won't tell you what it is...",
+                Toast.LENGTH_LONG
+            ).show()
+        }
     }
 
     private fun initButtonEnabledAnim() {

@@ -8,4 +8,7 @@
     <string name="let_s_do_whatever">Let\'s do whatever</string>
     <string name="title_activity_sell_your_soul">SellYourSoulActivity</string>
     <string name="title_activity_workout">WorkoutActivity</string>
+    <string name="do_something">Do Something</string>
+    <string name="wtf">WTF?!</string>
+    <string name="your_droidcon_workout">Your Droidcon Workout</string>
 </resources>

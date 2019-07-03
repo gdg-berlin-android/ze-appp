@@ -185,10 +185,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="#FFFF2020"
-                android:text="Your Droidcon Workout"
+                android:text="@string/your_droidcon_workout"
                 app:layout_constraintTop_toBottomOf="@+id/tryToLottie"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
+
+
+
+            <Button android:id="@+id/idkBtn"
+                android:textColor="@drawable/button_text_color_selector"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#332453"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/workHarder"
+                android:text="@string/wtf"/>
 
             <Button
                 android:textColor="@drawable/button_text_color_selector"
@@ -200,14 +211,15 @@
                 android:text="@string/let_s_do_whatever"
                 app:layout_constraintTop_toBottomOf="@id/idkBtn" />
 
-            <Button android:id="@+id/idkBtn"
-                android:textColor="@drawable/button_text_color_selector"
+            <Button android:id="@+id/doSomthing"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#332453"
-                android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@id/workHarder"
-                android:text="WTF?!"/>
+                app:layout_constraintTop_toBottomOf="@+id/italianButton"
+                android:text="@string/do_something"
+                android:background="#FF2030"
+            />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
