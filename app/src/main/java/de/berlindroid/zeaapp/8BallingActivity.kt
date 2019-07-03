@@ -2,8 +2,13 @@ package de.berlindroid.zeaapp
 
 import android.app.Activity
 import android.os.Bundle
+import android.os.Handler
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.os.HandlerCompat
+import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.eightball_activity.*
+import kotlinx.android.synthetic.main.pokemon_layout.*
 import kotlin.random.Random
 
 class BallingActivity : Activity() {
@@ -30,6 +35,12 @@ class BallingActivity : Activity() {
 
         button.setOnClickListener {
             eightball_output.text = answers[Random.nextInt(answers.size)]
+            Glide.with(this@BallingActivity.applicationContext)
+                .load(R.drawable.myexplosion)
+                .into(explosion)
+            HandlerCompat.postDelayed(Handler(), Runnable { Glide.with(this@BallingActivity.applicationContext)
+                .load(R.drawable.myexplosion2)
+                .into(explosion2)  },null,3500)
         }
     }
 
