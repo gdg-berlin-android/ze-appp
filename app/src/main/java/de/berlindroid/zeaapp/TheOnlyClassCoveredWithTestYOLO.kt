@@ -14,11 +14,11 @@ class TheOnlyClassCoveredWithTestYOLO(
     }
 
     override fun onTick(timeLeft: Long) {
-        val secondsLeft = if(timeLeft / 1000 < 1){
+        val secondsLeft = if (timeLeft / 1000 < 1) {
             0
-        } else{
-            timeLeft/1000
+        } else {
+            timeLeft / 1000
         }
-        onTickAction?.invoke("ACHTUNG!!! Time left: $secondsLeft")
+        onTickAction?.invoke("ACHTUNG!!! Time until SWAGGIFY left: $secondsLeft")
     }
 }

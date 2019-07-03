@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
@@ -26,9 +27,21 @@ class PokemonActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when(item.itemId){
+        return when (item.itemId) {
             R.id.sort -> {
                 // todo: sort the pokelist, pleaseee.
+                // NO SORTING!
+                TheOnlyClassCoveredWithTestYOLO(
+                    onTickAction = { tickText ->
+                        SwaggifyText.visibility = View.VISIBLE
+                        SwaggifyText.text = tickText
+                    },
+                    onFinishCountdownAction = {
+                        // TODO: DO SOMETHING AWESOME HERE AFTER COUNTDOWN
+                        SwaggifyText.visibility = View.INVISIBLE
+                        pokemonRecyclerView.rotation += 180.0f
+                    }
+                ).start()
                 true
             }
             else -> false
@@ -74,7 +87,7 @@ class PokemonActivity : AppCompatActivity() {
             private fun <T> List<T>.lastButOne(): T {
                 // TODO: Does this actually work?
                 // IT DOES, TESTED IN PRODUCTION
-                return this[this.size -2]
+                return this[this.size - 2]
             }
         })
     }
