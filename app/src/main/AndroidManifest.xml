@@ -25,10 +25,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".VersusActivity"></activity>
         <activity
             android:name=".WorkoutActivity"
             android:label="@string/title_activity_workout"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SellYourSoulActivity"
             android:label="@string/title_activity_sell_your_soul"

@@ -19,29 +19,29 @@ import kotlinx.android.synthetic.main.activity_exo_player.*
 //TODO Should play video that will be provided to EditText
 class ExoPlayerAwesomeActivity: Activity() {
 
-    private var player: ExoPlayer
+//    private var player: ExoPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
     }
 
-    private fun startVide() {
-        awesome_player
+//    private fun startVide() {
+//        awesome_player
+//
+//
+//        player = ExoPlayerFactory.newSimpleInstance(this);
+//        // Attach player to the view.
+//        awesome_player.setPlayer(player);
+//        // Prepare the player with the dash media source.
+//        player.prepare(createMediaSource())
+//    }
 
-
-        player = ExoPlayerFactory.newSimpleInstance(this);
-        // Attach player to the view.
-        awesome_player.setPlayer(player);
-        // Prepare the player with the dash media source.
-        player.prepare(createMediaSource())
-    }
-
-    private fun createMediaSource() {
-        val trackSelector = DefaultTrackSelector()
-        val loadControl = DefaultLoadControl()
-        val  videoSource : MediaSource = ProgressiveMediaSource.Factory(ExoPlayerFactory.newInstance(this, trackSelector, loadControl)).createMediaSource(et_video_url.text);
-
-        val mergedSource: MergingMediaSource = MergingMediaSource(videoSource);
-    }
+//    private fun createMediaSource() {
+//        val trackSelector = DefaultTrackSelector()
+//        val loadControl = DefaultLoadControl()
+//        val  videoSource : MediaSource = ProgressiveMediaSource.Factory(ExoPlayerFactory.newInstance(this, trackSelector, loadControl)).createMediaSource(et_video_url.text);
+//
+//        val mergedSource: MergingMediaSource = MergingMediaSource(videoSource);
+//    }
 }

@@ -12,6 +12,7 @@ import de.berlindroid.zeaapp.api.ApiPokemon
 import de.berlindroid.zeaapp.api.ZeApppApi
 import de.berlindroid.zeaapp.pokecycler.Pokedapter
 import de.berlindroid.zeaapp.pokecycler.Pokemon
+import de.berlindroid.zeaapp.pokecycler.allPokemon
 import kotlinx.android.synthetic.main.pokemon_layout.*
 import okhttp3.HttpUrl
 import retrofit2.Call
@@ -80,6 +81,7 @@ class PokemonActivity : AppCompatActivity() {
                     .into(header)
 
                 Log.d(PokemonActivity::class.java.simpleName, "Pokemon $pokemon")
+                allPokemon = pokemon
                 adapter.pokemons.addAll(pokemon)
                 adapter.notifyDataSetChanged()
             }

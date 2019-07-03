@@ -15,7 +15,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import de.berlindroid.zeaapp.PokemonDetailsActivity
 import de.berlindroid.zeaapp.R
+import de.berlindroid.zeaapp.VersusActivity
 import kotlinx.android.synthetic.main.item_pokemon.view.*
+import java.util.*
+
+var allPokemon: List<Pokemon> = emptyList()
 
 class Pokedapter : RecyclerView.Adapter<Pokeholder>() {
 
@@ -38,7 +42,6 @@ class Pokedapter : RecyclerView.Adapter<Pokeholder>() {
         ViewCompat.setAccessibilityDelegate(view, PokeAccessibilityDelegate())
         TooltipCompat.setTooltipText(view, view.toastText())
     }
-
 }
 
 class Pokeholder(view: View) : RecyclerView.ViewHolder(view) {
@@ -58,6 +61,22 @@ class Pokeholder(view: View) : RecyclerView.ViewHolder(view) {
             val intent = Intent(itemView.context, PokemonDetailsActivity::class.java)
             intent.putExtra(PokemonDetailsActivity.POKEMON_DETAILS_ACTIVITY_POKEMON_ID, pokemon.id)
             itemView.context.startActivity(intent)
+        }
+
+        itemView.setOnLongClickListener {
+            var otherPokemonId = this@Pokeholder.adapterPosition
+            while (otherPokemonId == this@Pokeholder.adapterPosition) {
+                otherPokemonId = Random().nextInt(allPokemon.size)
+            }
+
+            val otherPokemon = allPokemon[otherPokemonId]
+
+            val intent = Intent(itemView.context, VersusActivity::class.java)
+            intent.putExtra("pokemon1", pokemon.name)
+            intent.putExtra("pokemon2", otherPokemon.name)
+            itemView.context.startActivity(intent)
+
+            true
         }
     }
 }
