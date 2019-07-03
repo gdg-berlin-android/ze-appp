@@ -3,7 +3,6 @@ package de.berlindroid.zeaapp
 import android.animation.ValueAnimator
 import android.annotation.SuppressLint
 import android.app.Activity
-import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Build
@@ -39,15 +38,11 @@ import kotlin.coroutines.CoroutineContext
 import kotlin.random.Random
 
 
-fun Activity.createParticleEffect(){
-
-
-
-    val p=  ParticleSystem(this, 10, R.drawable.gdg_logo, 1000)
-.setSpeedRange(0.2f, 0.5f)
-        .setAcceleration(10F,20)
-.emit(Random.nextInt(1000),Random.nextInt(1000),10)
-
+fun Activity.createParticleEffect() {
+    ParticleSystem(this, 1000, R.drawable.gdg_logo, 1000)
+        .setSpeedRange(0.2f, 0.5f)
+        .setAcceleration(1000F, 20)
+        .emit(Random.nextInt(1000), Random.nextInt(1000), 100)
 
 }
 
@@ -57,14 +52,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
         get() = SupervisorJob()
     var numberOfTaps: Int = 0
 
-    private  lateinit var buttons : List<Button>
+    private lateinit var buttons: List<Button>
 
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
 
 
         val isAnnoying = intent.getBooleanExtra("ANNOYING", true)
@@ -90,7 +84,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
         initOnClickListeners()
         initRest()
 
-        buttons = listOf(main_play_button, pokemonButton, conferenceButton, historyButton, whereAreChetAndRomain, balling_eights, tryToLottie, workHarder, idkBtn, italianButton)
+        buttons = listOf(
+            main_play_button,
+            pokemonButton,
+            conferenceButton,
+            historyButton,
+            whereAreChetAndRomain,
+            balling_eights,
+            tryToLottie,
+            workHarder,
+            idkBtn,
+            italianButton
+        )
 
         if (isAnnoying) {
             initButtonEnabledAnim()
@@ -177,7 +182,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
         }
 
         big_red_button.setOnClickListener {
-            Toast.makeText(this, "COME ON!!!!!! \nYou really need to work on your impulse", Toast.LENGTH_LONG).show()
+            Toast.makeText(
+                this,
+                "COME ON!!!!!! \nYou really need to work on your impulse",
+                Toast.LENGTH_LONG
+            ).show()
         }
     }
 
@@ -255,8 +264,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
             for (i in 0..t) {
                 if (i % 2 == 0) {
                     balling_eights.setVisibility(View.VISIBLE)
-                }
-                else {
+                } else {
                     balling_eights.visibility = View.INVISIBLE
                 }
             }
