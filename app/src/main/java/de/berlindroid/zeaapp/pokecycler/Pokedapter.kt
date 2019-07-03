@@ -41,12 +41,6 @@ class Pokedapter : RecyclerView.Adapter<Pokeholder>() {
 
 }
 
-data class Pokemon(
-    val id: String,
-    val name: String,
-    val url: String
-)
-
 class Pokeholder(view: View) : RecyclerView.ViewHolder(view) {
     fun bind(pokemon: Pokemon) {
         itemView.pokeName.text = pokemon.name.capitalize()
