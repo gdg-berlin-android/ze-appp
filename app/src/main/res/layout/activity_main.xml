@@ -38,12 +38,15 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/main_container">
+        app:layout_constraintTop_toBottomOf="@id/main_container"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="0dp">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:padding="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/jwimage">
@@ -68,27 +71,25 @@
                 app:layout_constraintTop_toBottomOf="@id/main_text" />
 
             <Button
+                android:id="@+id/jumpingButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Catch Me"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/droidcon_icon" />
+
+            <Button
                 android:id="@+id/main_play_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
                 android:background="#00dd00"
                 android:text="@string/main_play_label"
                 android:textColor="#ffffff"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/jwimage" />
-
-            <Button
-                android:id="@+id/italianButton"
-                style="@style/TextAppearance.MaterialComponents.Button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:text="@string/let_s_do_whatever"
-                app:layout_constraintBottom_toTopOf="@id/main_play_button" />
+                app:layout_constraintTop_toBottomOf="@+id/jumpingButton" />
 
 
             <Button
@@ -96,40 +97,40 @@
                 style="@style/TextAppearance.MaterialComponents.Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_marginTop="16dp"
                 android:background="#FFFF8080"
                 android:text="Pokemonify"
-                app:layout_constraintBottom_toTopOf="@id/italianButton" />
+                app:layout_constraintTop_toBottomOf="@id/main_play_button" />
 
             <Button
                 android:id="@+id/conferenceButton"
                 style="@style/TextAppearance.MaterialComponents.Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_marginTop="16dp"
                 android:background="#FFFFFF80"
                 android:text="Conferencify"
-                app:layout_constraintBottom_toTopOf="@id/pokemonButton" />
+                app:layout_constraintTop_toBottomOf="@id/pokemonButton" />
 
             <Button
                 android:id="@+id/historyButton"
                 style="@style/TextAppearance.MaterialComponents.Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_marginTop="16dp"
                 android:background="@android:color/holo_blue_light"
                 android:text="Check this"
-                app:layout_constraintBottom_toTopOf="@id/conferenceButton" />
+                app:layout_constraintTop_toBottomOf="@id/conferenceButton" />
 
             <Button
                 android:id="@+id/whereAreChetAndRomain"
                 style="@style/TextAppearance.MaterialComponents.Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_marginTop="16dp"
                 android:background="@color/colorAccent"
                 android:text="Where are Chet and Romain?"
-                app:layout_constraintBottom_toTopOf="@+id/historyButton"
+                app:layout_constraintTop_toBottomOf="@+id/historyButton"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -138,10 +139,10 @@
                 style="@style/TextAppearance.MaterialComponents.Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_marginTop="16dp"
                 android:background="#ff00ff"
                 android:text="Rude Magic Eight Ball"
-                app:layout_constraintBottom_toTopOf="@+id/tryToLottie"
+                app:layout_constraintTop_toBottomOf="@+id/whereAreChetAndRomain"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -150,10 +151,10 @@
                 style="@style/TextAppearance.MaterialComponents.Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_marginTop="16dp"
                 android:background="@color/colorAccent"
                 android:text="Lottie"
-                app:layout_constraintBottom_toTopOf="@+id/historyButton"
+                app:layout_constraintTop_toBottomOf="@+id/balling_eights"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -162,21 +163,22 @@
                 style="@style/TextAppearance.MaterialComponents.Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:background="#FFFF2020"
                 android:text="Your Droidcon Workout"
-                app:layout_constraintBottom_toTopOf="@+id/balling_eights"
+                app:layout_constraintTop_toBottomOf="@+id/tryToLottie"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <Button
-                android:id="@+id/jumpingButton"
-                android:layout_width="wrap_content"
+                android:id="@+id/italianButton"
+                style="@style/TextAppearance.MaterialComponents.Button"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Catch Me"
-                app:layout_constraintBottom_toTopOf="@id/tryToLottie" />
-
-        </LinearLayout>
-
+                android:layout_marginBottom="16dp"
+                android:text="@string/let_s_do_whatever"
+                app:layout_constraintBottom_toTopOf="@id/workHarder" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
 
