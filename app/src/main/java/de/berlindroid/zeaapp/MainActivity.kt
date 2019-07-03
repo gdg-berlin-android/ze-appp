@@ -2,6 +2,8 @@ package de.berlindroid.zeaapp
 
 import android.animation.ValueAnimator
 import android.annotation.SuppressLint
+import android.app.Activity
+import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Build
@@ -17,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.snackbar.Snackbar
+import com.plattysoft.leonids.ParticleSystem
 import de.berlindroid.zeaapp.api.ApiPokemon
 import de.berlindroid.zeaapp.api.PokeApi
 import de.berlindroid.zeaapp.api.ZeApppApi
@@ -33,6 +36,20 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.time.LocalTime
 import kotlin.coroutines.CoroutineContext
+import kotlin.random.Random
+
+
+fun Activity.createParticleEffect(){
+
+
+
+    val p=  ParticleSystem(this, 10, R.drawable.gdg_logo, 1000)
+.setSpeedRange(0.2f, 0.5f)
+        .setAcceleration(10F,20)
+.emit(Random.nextInt(1000),Random.nextInt(1000),10)
+
+
+}
 
 class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
     private lateinit var animator: ValueAnimator
@@ -48,16 +65,21 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+
         val isAnnoying = intent.getBooleanExtra("ANNOYING", true)
 
         workHarder.setOnClickListener {
+            createParticleEffect()
             startActivity(Intent(this@MainActivity, WorkoutActivity::class.java))
         }
 
         balling_eights.setOnClickListener {
+            createParticleEffect()
             startActivity(Intent(this@MainActivity, BallingActivity::class.java))
         }
         balling_eights.setOnLongClickListener {
+            createParticleEffect()
             startActivity(Intent(this@MainActivity, SellYourSoulActivity::class.java))
             true
         }
@@ -75,6 +97,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
         }
 
         main_text.setOnClickListener {
+            createParticleEffect()
             numberOfTaps++
             when (numberOfTaps) {
                 7 -> {
@@ -85,33 +108,40 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
         }
 
         jumpingButton.setOnClickListener {
+            createParticleEffect()
             it.animate().rotationBy(15f).translationY(Math.random().toFloat() * 100)
                 .translationX(Math.random().toFloat() * 100).setDuration(20).start()
         }
 
         jumpingButton.setOnLongClickListener {
+            createParticleEffect()
             val intent = Intent(this, PaletteActivity::class.java)
             startActivity(intent)
             true
         }
 
         italianButton.setOnClickListener {
+            createParticleEffect()
             val intent = Intent(this, AnimalActivity::class.java)
             startActivity(intent)
         }
 
         italianButton.setOnLongClickListener {
+
+            createParticleEffect()
             val intent = Intent(this, HelloArActivity::class.java)
             startActivity(intent)
             true
         }
 
         pokemonButton.setOnClickListener {
+            createParticleEffect()
             val api = App.pokeRetrofit.create(ZeApppApi::class.java)
             startActivity(Intent(this, PokemonActivity::class.java))
         }
 
         pokemonButton.setOnLongClickListener {
+            createParticleEffect()
             val api = App.pokeRetrofit.create(PokeApi::class.java)
 
             newSchoolRequest()
@@ -120,15 +150,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
         }
 
         conferenceButton.setOnClickListener {
+            createParticleEffect()
             startActivity(Intent(applicationContext, EmailActivity::class.java))
 
         }
 
         historyButton.setOnClickListener {
+            createParticleEffect()
             showModal()
         }
 
         historyButton.setOnLongClickListener() {
+            createParticleEffect()
             // TODO add actual time here
             val time = LocalTime.now()
             main_text.text = "The time is: $time"

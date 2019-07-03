@@ -58,4 +58,8 @@ dependencies {
     implementation 'com.google.ar:core:1.10.0'
     implementation 'de.javagl:obj:0.2.1'
     testImplementation 'org.mockito:mockito-core:2.28.2'
+
+
+
+    implementation 'com.plattysoft.leonids:LeonidsLib:1.3.2'
 }
