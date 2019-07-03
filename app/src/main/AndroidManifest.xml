@@ -26,9 +26,13 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
+            android:name=".WorkoutActivity"
+            android:label="@string/title_activity_workout"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".SellYourSoulActivity"
             android:label="@string/title_activity_sell_your_soul"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <meta-data
             android:name="com.google.ar.core"
@@ -56,7 +60,7 @@
         </activity>
         <activity
             android:name=".LogoActivity"
-            android:theme="@style/Theme.AppCompat"></activity>
+            android:theme="@style/Theme.AppCompat" />
         <activity android:name=".MainActivity" />
         <activity android:name=".emails.EmailActivity" />
         <activity android:name=".IamTheRealSplashActivity" />

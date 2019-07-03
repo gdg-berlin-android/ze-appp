@@ -142,4 +142,15 @@
         android:text="Catch Me"
         app:layout_constraintBottom_toTopOf="@id/tryToLottie"/>
 
+    <Button
+        android:id="@+id/workHarder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your Droidcon Workout"
+        app:layout_constraintBottom_toTopOf="@+id/balling_eights"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="#FFFF2020"
+        style="@style/TextAppearance.MaterialComponents.Button"/>
+
 </androidx.constraintlayout.motion.widget.MotionLayout>

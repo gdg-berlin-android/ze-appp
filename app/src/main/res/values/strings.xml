@@ -7,4 +7,5 @@
     <string name="main_zin">YOU WIN</string>
     <string name="let_s_do_whatever">Let\'s do whatever</string>
     <string name="title_activity_sell_your_soul">SellYourSoulActivity</string>
+    <string name="title_activity_workout">WorkoutActivity</string>
 </resources>
