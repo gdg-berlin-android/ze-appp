@@ -75,6 +75,7 @@
         <activity android:name=".PaletteActivity" />
         <activity android:name="helloar.HelloArActivity" />
         <activity android:name=".BallingActivity" />
+        <activity android:name=".CameWhartonActivity" />
     </application>
 
 </manifest>

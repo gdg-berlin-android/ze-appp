@@ -61,6 +61,7 @@ dependencies {
     implementation 'com.airbnb.android:lottie:2.8.0'
 
     implementation 'com.github.bumptech.glide:glide:4.9.0'
+    implementation 'io.fotoapparat.fotoapparat:library:2.3.1'
     kapt 'com.github.bumptech.glide:compiler:4.9.0'
     def koin_version = '2.0.1'
 
