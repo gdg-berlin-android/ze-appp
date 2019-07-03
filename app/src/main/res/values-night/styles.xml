@@ -1,0 +1,5 @@
+<resources>
+
+    <style name="DayNightBottomSheetDialog" parent="Theme.Design.BottomSheetDialog" />
+
+</resources>

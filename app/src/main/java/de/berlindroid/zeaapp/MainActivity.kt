@@ -237,7 +237,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
 
     @SuppressLint("NewApi")
     private fun showModal() {
-        val bottomSheetDialog = BottomSheetDialog(this)
+        val bottomSheetDialog = BottomSheetDialog(this, R.style.DayNightBottomSheetDialog)
         val sheetView = layoutInflater.inflate(R.layout.conference_modal_dialog, null)
         sheetView.findViewById<View>(R.id.shutAppContainer).setOnClickListener {
             Toast.makeText(this@MainActivity, "Bye Bye", Toast.LENGTH_LONG).show()
