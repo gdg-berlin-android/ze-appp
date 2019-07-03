@@ -1,5 +1,6 @@
 package de.berlindroid.zeaapp
 
+import android.animation.ValueAnimator
 import android.annotation.SuppressLint
 import android.content.DialogInterface
 import android.content.Intent
@@ -7,6 +8,7 @@ import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.animation.LinearInterpolator
 import android.widget.Button
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -33,9 +35,12 @@ import java.time.LocalTime
 import kotlin.coroutines.CoroutineContext
 
 class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
+    private lateinit var animator: ValueAnimator
     override val coroutineContext: CoroutineContext
         get() = SupervisorJob()
     var numberOfTaps: Int = 0
+
+    private  lateinit var buttons : List<Button>
 
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -60,7 +65,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
 
         initOnClickListeners()
         initRest()
+buttons = listOf(main_play_button, pokemonButton, conferenceButton, historyButton, whereAreChetAndRomain, balling_eights, tryToLottie, workHarder, idkBtn, italianButton)
 
+        initButtonEnabledAnim()
         main_text.setOnClickListener {
             numberOfTaps++
             when (numberOfTaps) {
@@ -128,6 +135,23 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
 
         findViewById<Button>(R.id.tryToLottie).setOnClickListener {
             startActivity(Intent(this, AnimateMeEverywhere::class.java))
+        }
+    }
+
+    private fun initButtonEnabledAnim() {
+        animator = ValueAnimator.ofInt(0, buttons.size)
+        animator.duration = (1000 * buttons.size).toLong()
+        animator.interpolator = LinearInterpolator()
+        animator.addUpdateListener { updateAnimstep(it) }
+        animator.repeatCount = ValueAnimator.INFINITE
+        animator.repeatMode = ValueAnimator.REVERSE
+        animator.start()
+
+    }
+
+    private fun updateAnimstep(anim: ValueAnimator?) {
+        for (i in 0 until buttons.size) {
+            buttons.get(i).isEnabled = i == anim?.animatedValue
         }
     }
 
