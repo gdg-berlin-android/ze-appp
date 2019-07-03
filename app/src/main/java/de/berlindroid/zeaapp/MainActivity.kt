@@ -48,6 +48,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val isAnnoying = intent.getBooleanExtra("ANNOYING", true)
+
         workHarder.setOnClickListener {
             startActivity(Intent(this@MainActivity, WorkoutActivity::class.java))
         }
@@ -65,9 +67,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
 
         initOnClickListeners()
         initRest()
-buttons = listOf(main_play_button, pokemonButton, conferenceButton, historyButton, whereAreChetAndRomain, balling_eights, tryToLottie, workHarder, idkBtn, italianButton)
 
-        initButtonEnabledAnim()
+        buttons = listOf(main_play_button, pokemonButton, conferenceButton, historyButton, whereAreChetAndRomain, balling_eights, tryToLottie, workHarder, idkBtn, italianButton)
+
+        if (isAnnoying) {
+            initButtonEnabledAnim()
+        }
+
         main_text.setOnClickListener {
             numberOfTaps++
             when (numberOfTaps) {
