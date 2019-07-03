@@ -152,17 +152,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
         animator = ValueAnimator.ofInt(0, buttons.size)
         animator.duration = (1000 * buttons.size).toLong()
         animator.interpolator = LinearInterpolator()
-        animator.addUpdateListener { updateAnimstep(it) }
         animator.repeatCount = ValueAnimator.INFINITE
         animator.repeatMode = ValueAnimator.REVERSE
         animator.start()
 
-    }
-
-    private fun updateAnimstep(anim: ValueAnimator?) {
-        for (i in 0 until buttons.size) {
-            buttons.get(i).isEnabled = i == anim?.animatedValue
-        }
     }
 
     private fun newSchoolRequest() {
