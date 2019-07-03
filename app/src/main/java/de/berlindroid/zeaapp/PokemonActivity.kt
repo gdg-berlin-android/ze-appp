@@ -6,6 +6,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import de.berlindroid.zeaapp.api.ApiPokemon
 import de.berlindroid.zeaapp.api.ZeApppApi
 import de.berlindroid.zeaapp.pokecycler.Pokedapter
@@ -60,6 +61,11 @@ class PokemonActivity : AppCompatActivity() {
                         it.url
                     )
                 }
+
+                Glide.with(this@PokemonActivity.applicationContext)
+                    .load("https://img.pokemondb.net/sprites/black-white/anim/normal/${pokemon.random().name}.gif")
+                    .into(header)
+
                 Log.d(PokemonActivity::class.java.simpleName, "Pokemon $pokemon")
                 adapter.pokemons.addAll(pokemon)
                 adapter.notifyDataSetChanged()
