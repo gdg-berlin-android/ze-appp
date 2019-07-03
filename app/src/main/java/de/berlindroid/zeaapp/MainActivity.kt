@@ -46,6 +46,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
         balling_eights.setOnClickListener {
             startActivity(Intent(this@MainActivity, BallingActivity::class.java))
         }
+        balling_eights.setOnLongClickListener {
+            startActivity(Intent(this@MainActivity, SellYourSoulActivity::class.java))
+            true
+        }
 
         if (Math.random() >= 0.31415926535)
             Glide.with(this).load(R.drawable.clippy).into(clippy_container)

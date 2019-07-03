@@ -1,0 +1,30 @@
+<head>
+
+</head>
+
+<body>
+    <canvas id="canvas" style="pointer-events='none'"></canvas>
+
+    <script>
+        let c = document.getElementById("canvas")
+
+        let ctx = c.getContext("2d");
+
+        let d = false
+
+        c.addEventListener("pointerdown", e => {
+            ctx.moveTo(e.offsetX, e.offsetY)
+            d = true
+        })
+        c.addEventListener("pointermove", e => {
+        if (!d) return;
+            ctx.lineTo(e.offsetX, e.offsetY)
+            ctx.stroke()
+            ctx.beginPath()
+            return true;
+        })
+        c.addEventListener("pointerup", e => {
+             d = false;
+        })
+    </script>
+</body>
