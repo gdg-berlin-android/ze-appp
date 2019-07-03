@@ -87,7 +87,7 @@
                 android:layout_marginTop="16dp"
                 android:background="#00dd00"
                 android:text="@string/main_play_label"
-                android:textColor="#ffffff"
+                android:textColor="@drawable/button_text_color_selector"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/jumpingButton" />
@@ -101,6 +101,7 @@
                 android:layout_marginTop="16dp"
                 android:background="#FFFF8080"
                 android:text="Pokemonify"
+                android:textColor="@drawable/button_text_color_selector"
                 app:layout_constraintTop_toBottomOf="@id/main_play_button" />
 
             <Button
@@ -111,6 +112,7 @@
                 android:layout_marginTop="16dp"
                 android:background="#FFFFFF80"
                 android:text="Conferencify"
+                android:textColor="@drawable/button_text_color_selector"
                 app:layout_constraintTop_toBottomOf="@id/pokemonButton" />
 
             <Button
@@ -121,9 +123,11 @@
                 android:layout_marginTop="16dp"
                 android:background="@android:color/holo_blue_light"
                 android:text="Check this"
+                android:textColor="@drawable/button_text_color_selector"
                 app:layout_constraintTop_toBottomOf="@id/conferenceButton" />
 
             <Button
+                android:textColor="@drawable/button_text_color_selector"
                 android:id="@+id/whereAreChetAndRomain"
                 style="@style/TextAppearance.MaterialComponents.Button"
                 android:layout_width="match_parent"
@@ -136,6 +140,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <Button
+                android:textColor="@drawable/button_text_color_selector"
                 android:id="@+id/balling_eights"
                 style="@style/TextAppearance.MaterialComponents.Button"
                 android:layout_width="match_parent"
@@ -148,6 +153,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <Button
+                android:textColor="@drawable/button_text_color_selector"
                 android:id="@+id/tryToLottie"
                 style="@style/TextAppearance.MaterialComponents.Button"
                 android:layout_width="match_parent"
@@ -160,6 +166,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <Button
+                android:textColor="@drawable/button_text_color_selector"
                 android:id="@+id/workHarder"
                 style="@style/TextAppearance.MaterialComponents.Button"
                 android:layout_width="match_parent"
@@ -172,6 +179,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <Button
+                android:textColor="@drawable/button_text_color_selector"
                 android:id="@+id/italianButton"
                 style="@style/TextAppearance.MaterialComponents.Button"
                 android:layout_width="match_parent"
@@ -181,6 +189,7 @@
                 app:layout_constraintTop_toBottomOf="@id/idkBtn" />
 
             <Button android:id="@+id/idkBtn"
+                android:textColor="@drawable/button_text_color_selector"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#332453"
