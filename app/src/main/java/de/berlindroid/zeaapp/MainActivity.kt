@@ -189,6 +189,19 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
 
     private fun initOnClickListeners() {
         main_play_button?.setOnClickListener(this)
+        idkBtn?.setOnClickListener {
+            val t = (Math.random() * 100).toInt()
+            //TODO Fix the delay!!!
+            for (i in 0..t) {
+                if (i % 2 == 0) {
+                    balling_eights.setVisibility(View.VISIBLE)
+                }
+                else {
+                    balling_eights.visibility = View.INVISIBLE
+                }
+            }
+            balling_eights?.performClick()
+        }
     }
 
     override fun onClick(view: View?) {
