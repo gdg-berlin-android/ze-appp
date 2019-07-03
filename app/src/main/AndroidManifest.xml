@@ -55,6 +55,7 @@
         <activity android:name=".WebviewActivity" />
         <activity android:name=".PaletteActivity" />
         <activity android:name="helloar.HelloArActivity" />
+        <activity android:name=".BallingActivity" />
     </application>
 
 </manifest>

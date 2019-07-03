@@ -43,6 +43,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        balling_eights.setOnClickListener {
+            startActivity(Intent(this@MainActivity, BallingActivity::class.java))
+        }
+
         if (Math.random() >= 0.31415926535)
             Glide.with(this).load(R.drawable.clippy).into(clippy_container)
 
