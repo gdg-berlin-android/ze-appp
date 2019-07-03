@@ -142,6 +142,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, CoroutineScope {
         findViewById<Button>(R.id.tryToLottie).setOnClickListener {
             startActivity(Intent(this, AnimateMeEverywhere::class.java))
         }
+
+        big_red_button.setOnClickListener {
+            Toast.makeText(this, "COME ON!!!!!! \nYou really need to work on your impulse", Toast.LENGTH_LONG).show()
+        }
     }
 
     private fun initButtonEnabledAnim() {
