@@ -1,156 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+
+<androidx.constraintlayout.motion.widget.MotionLayout
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="200dp"
     app:layoutDescription="@xml/scene_01"
-    >
+    app:layout_constraintTop_toTopOf="parent">
 
     <ImageView
         android:id="@+id/clippy_container"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <TextView
-        android:id="@+id/main_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="42sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/droidcon_icon"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:text="Hello" />
 
-    <ImageView
-        android:id="@+id/droidcon_icon"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:src="@drawable/droidcon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-
-    <ImageView
-        android:id="@+id/jwimage"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:src="@drawable/jw"
-        />
-
-    <Button
-        android:id="@+id/main_play_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="#00dd00"
-        android:text="@string/main_play_label"
-        android:textColor="#ffffff"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/italianButton"
-        style="@style/TextAppearance.MaterialComponents.Button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="@string/let_s_do_whatever"
-        app:layout_constraintBottom_toTopOf="@id/main_play_button" />
-
-
-    <Button
-        android:id="@+id/pokemonButton"
-        style="@style/TextAppearance.MaterialComponents.Button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:background="#FFFF8080"
-        android:text="Pokemonify"
-        app:layout_constraintBottom_toTopOf="@id/italianButton" />
-
-    <Button
-        android:id="@+id/conferenceButton"
-        style="@style/TextAppearance.MaterialComponents.Button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:background="#FFFFFF80"
-        android:text="Conferencify"
-        app:layout_constraintBottom_toTopOf="@id/pokemonButton" />
-
-    <Button
-        android:id="@+id/historyButton"
-        style="@style/TextAppearance.MaterialComponents.Button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:background="@android:color/holo_blue_light"
-        android:text="Check this"
-        app:layout_constraintBottom_toTopOf="@id/conferenceButton" />
-
-    <Button
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/whereAreChetAndRomain"
-        android:text="Where are Chet and Romain?"
-        android:background="@color/colorAccent"
-        app:layout_constraintBottom_toTopOf="@+id/historyButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="8dp"
-        style="@style/TextAppearance.MaterialComponents.Button"/>
-
-    <Button
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/balling_eights"
-        android:text="Rude Magic Eight Ball"
-        android:background="#ff00ff"
-        app:layout_constraintBottom_toTopOf="@+id/tryToLottie"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="8dp"
-        style="@style/TextAppearance.MaterialComponents.Button"/>
-
-    <Button
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/tryToLottie"
-        android:text="Lottie"
-        android:background="@color/colorAccent"
-        app:layout_constraintBottom_toTopOf="@+id/historyButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="8dp"
-        style="@style/TextAppearance.MaterialComponents.Button"/>
-
-    <Button
-        android:id="@+id/jumpingButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Catch Me"
-        app:layout_constraintBottom_toTopOf="@id/tryToLottie"/>
-
-    <Button
-        android:id="@+id/workHarder"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Your Droidcon Workout"
-        app:layout_constraintBottom_toTopOf="@+id/balling_eights"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="#FFFF2020"
-        style="@style/TextAppearance.MaterialComponents.Button"/>
 
 </androidx.constraintlayout.motion.widget.MotionLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/main_container">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/main_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="42sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/droidcon_icon"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_editor_absoluteX="-16dp"
+            tools:text="Hello" />
+
+        <ImageView
+            android:id="@+id/droidcon_icon"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/droidcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+
+        <ImageView
+            android:id="@+id/jwimage"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/jw"
+            />
+
+        <Button
+            android:id="@+id/main_play_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="#00dd00"
+            android:text="@string/main_play_label"
+            android:textColor="#ffffff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/italianButton"
+            style="@style/TextAppearance.MaterialComponents.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/let_s_do_whatever"
+            app:layout_constraintBottom_toTopOf="@id/main_play_button" />
+
+
+        <Button
+            android:id="@+id/pokemonButton"
+            style="@style/TextAppearance.MaterialComponents.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="#FFFF8080"
+            android:text="Pokemonify"
+            app:layout_constraintBottom_toTopOf="@id/italianButton" />
+
+        <Button
+            android:id="@+id/conferenceButton"
+            style="@style/TextAppearance.MaterialComponents.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="#FFFFFF80"
+            android:text="Conferencify"
+            app:layout_constraintBottom_toTopOf="@id/pokemonButton" />
+
+        <Button
+            android:id="@+id/historyButton"
+            style="@style/TextAppearance.MaterialComponents.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@android:color/holo_blue_light"
+            android:text="Check this"
+            app:layout_constraintBottom_toTopOf="@id/conferenceButton" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/whereAreChetAndRomain"
+            android:text="Where are Chet and Romain?"
+            android:background="@color/colorAccent"
+            app:layout_constraintBottom_toTopOf="@+id/historyButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="8dp"
+            style="@style/TextAppearance.MaterialComponents.Button"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/balling_eights"
+            android:text="Rude Magic Eight Ball"
+            android:background="#ff00ff"
+            app:layout_constraintBottom_toTopOf="@+id/tryToLottie"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="8dp"
+            style="@style/TextAppearance.MaterialComponents.Button"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tryToLottie"
+            android:text="Lottie"
+            android:background="@color/colorAccent"
+            app:layout_constraintBottom_toTopOf="@+id/historyButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="8dp"
+            style="@style/TextAppearance.MaterialComponents.Button"/>
+
+        <Button
+            android:id="@+id/jumpingButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Catch Me"
+            app:layout_constraintBottom_toTopOf="@id/tryToLottie"/>
+
+        <Button
+            android:id="@+id/workHarder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your Droidcon Workout"
+            app:layout_constraintBottom_toTopOf="@+id/balling_eights"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="#FFFF2020"
+            style="@style/TextAppearance.MaterialComponents.Button"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
