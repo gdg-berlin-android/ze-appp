@@ -29,3 +29,13 @@ resulting in:
   },...
 ]
 ```
+
+
+# Results
+
+💥This is what we did at the #DCBerlin19💥
+* Gource: https://youtu.be/QozFNLnny8o
+* Run through: https://youtu.be/vXr5eXEDQb8
+* Source: https://github.com/gdg-berlin-android/ze-appp ….
+
+Next: meet us at our next meetup https://www.meetup.com/berlindroid/events/ktlzcryzkbpc/ … we are sure that someone™ will talk about it.
